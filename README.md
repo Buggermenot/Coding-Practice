@@ -23,8 +23,12 @@ This is not meant as a platform to copy / cheat and should be used responsibly.
 
 
 Tasks to do
-1. MakeFile should compile
+MakeFile should:
+1. compile any of
     - Python
     - Java
     - C
     - C++
+    - more ...
+2. test against visible, hidden and both test cases and output test scores
+3. output run times.
