@@ -9,7 +9,7 @@ def testAll(tests: list, verbose=False):
     total_test = len(tests)
 
     for i in range(total_test):
-        res = tests[i].test()
+        res = tests[i].test(verbose)
         if res:
             passCount += 1
         else:
