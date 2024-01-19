@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#include "../Solutions/SampleSolution.cpp"
+#include "../YourSolution.cpp"
 
 int main() {
     Solution sol;
