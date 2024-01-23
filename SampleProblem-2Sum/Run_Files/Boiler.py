@@ -9,6 +9,7 @@ sys.path += [parent_dir, solutions_dir]
 
 import time
 
+# All Tests
 from Test_Cases import tests
 
 def testAll(tests: list, verbose=False):
@@ -19,7 +20,7 @@ def testAll(tests: list, verbose=False):
 
     start = time.time()
     if verbose:
-        print("Individual Test Results:")
+        print("\nIndividual Test Results:")
 
     for i in range(total_test):
         if verbose:
@@ -50,13 +51,15 @@ if __name__ == "__main__":
     SampleSolution = __import__(SampleSolutionFile).Solution
 
     # Check for Arguments
-    args = sys.argv
-    if len(args) == 1:                                  # Without any run parameters
+    args = sys.argv[1:]
+    if not args:
         allTests = tests.Tests().loadTests(target_func=YourSolution.twoSum)
-    elif args[1] == 'sample':    # With run parameter 'sample'
+    elif args[0] == 'verbose':
+        allTests = tests.Tests().loadTests(target_func=YourSolution.twoSum)
+    elif args[0] == 'sample':
         allTests = tests.Tests().loadTests(target_func=SampleSolution.twoSum)
     else:
-        exit(f"Incorrect input parameter(s) {args[1:]}. Try make py or make py sample 1")
+        exit(f"Incorrect input parameter(s) {args}. Try make py or make py sample verbose")
 
-    verbose = len(args) == 3
+    verbose = 'verbose' in args
     testAll(allTests, verbose=verbose)

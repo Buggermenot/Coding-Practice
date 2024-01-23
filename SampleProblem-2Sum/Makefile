@@ -5,8 +5,8 @@ ARGS := $(wordlist 2,3,$(MAKECMDGOALS))
 ECHO := @echo Running $(TARGET) file with arguments: $(ARGS)
 
 py:
+	$(ECHO)
 	python Run_Files/Boiler.py $(ARGS)
-
 sample:
 	@:
 

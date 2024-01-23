@@ -2,9 +2,9 @@ import json, time
 
 class Tests:
     """
-    params: testFilename -> str, .json filename
-    params: tests_json   -> list, list of test cases in json
-    params: tests        -> list, list of test cases as type Test
+    params: testFilename  -> str, .json filename
+    params: tests_json    -> list, list of test cases in json
+    params: tests         -> list, list of test cases as type Test
     """
     def __init__(self):
         self.testFilename = "Test_Cases/tests.json"
@@ -23,6 +23,11 @@ class Tests:
     
 
 class SingleTest:
+    """
+    params: input_params  -> dict, read from json file
+    params: output_params -> dict, read from json file
+    params: target_func   -> function, points to function written by user
+    """
     def __init__(self, test_params, target_func):
         self.input_params = test_params['Input']
         self.output_params = test_params['Output']
